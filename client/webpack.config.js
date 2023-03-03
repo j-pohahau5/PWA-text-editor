@@ -19,20 +19,23 @@ module.exports = () => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: './src/index.html',
-      }),
+				template: "index.html",
+				title: "PWA Text Editor",
+			}),
       new WebpackPwaManifest({
         filename: "manifest.json",
         name: 'Text Editor PWA App',
         short_name: 'Text Editor',
-        start_url: '/',
-        background_color: '#ffffff',
-        theme_color: '#2196f3',
+        description: 'coding text editor',
+        icons: [],
+        orientation: "portrait",
+				display: "standalone",
+				start_url: ".",
       }),
       new InjectManifest({
-        swSrc: './src/sw.js',
-        swDest: 'sw.js',
-      }),
+				swSrc: "./src-sw.js",
+				// more configuration here.
+			}),
     ],
     module: {
       rules: [
@@ -47,6 +50,7 @@ module.exports = () => {
             loader: 'babel-loader',
             options: {
               presets: ['@babel/preset-env'],
+              plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
             },
           },
         },
@@ -54,3 +58,19 @@ module.exports = () => {
     },
   };
 };
+
+
+// new WebpackPwaManifest({
+
+//   start_url: './',
+//   background_color: '#ffffff',
+//   theme_color: '#2196f3',
+//   publicPath: './',
+//   icons: [
+//     {
+//       src: path.resolve('src/images/logo.png'),
+//       sizes: [96, 128, 192, 256, 384, 512],
+//       destination: path.join('assets', 'icons'),
+//     },
+//   ]
+// }),

@@ -1,0 +1,8 @@
+{
+  "name": "Text Editor PWA App",
+  "short_name": "Text Editor",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": ".",
+  "description": "coding text editor"
+}
