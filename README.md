@@ -1,10 +1,8 @@
-# PWA-text-editor
+# PWA Text Editor
 
 ## Description 
 
 I created this project so people can edit users can edit PWA's on a webpage online and offline. The user can store the data so they can reference back to it.
-
-Youtube Video Link: (https://youtu.be/1vvTnV1LMbc)
 
 
 ## Table of Contents
